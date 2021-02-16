@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+
+
 <html>
 
 <head>
@@ -53,32 +55,33 @@
             );
 
 
-foreach ($items as $item) {
-    echo "
+            foreach ($items as $item) {
+                echo "
     <tr>
-        <td>".$item['cursus']."</td>
-        <td>".$item['omschrijving']."</td>
-        <td>".$item['prijs']."</td>
+        <td>" . $item['cursus'] . "</td>
+        <td>" . $item['omschrijving'] . "</td>
+        <td>" . $item['prijs'] . "</td>
         <td>
             <input type='submit' value='Inschrijven'>
         </td>
     </tr>";
-}
+            }
 
-echo "</table>
+            echo "</table>
 </form>";
 
-if ($_POST) {
-    if($_POST['naam']) {
-        echo "Beste ".$_POST['naam'].",je hebt je ingeschreven voor een hele vreemde cursus";
-    } else {
-        echo "Iemand heeft zich ingeschreven voor een hele vreemde cursus";
-    }
-}
+            if ($_POST) {
+                if ($_POST['naam']) {
+                    echo "Beste " . $_POST['naam'] . ",je hebt je ingeschreven voor een hele vreemde cursus";
+                } else {
+                    echo "Iemand heeft zich ingeschreven voor een hele vreemde cursus";
+                }
+            }
 
 
-?>
-        
+            ?>
+
 
 </body>
+
 </html>
