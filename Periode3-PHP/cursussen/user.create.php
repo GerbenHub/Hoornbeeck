@@ -20,7 +20,7 @@
       die('Connectie is niet gelukt');
     }
 
-    $sql = "INSER into users (username, password, naam_voluit)
+    $sql = "INSERT into users (username, password, naam_voluit)
       values ('$_POST[username]', '$_POST[password]', '$_POST[naam_voluit]')";
 
     if (!mysqli_query($conn, $sql)) {

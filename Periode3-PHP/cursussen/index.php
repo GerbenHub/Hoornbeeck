@@ -26,6 +26,9 @@ include 'header.inc.php';
             echo '
             <li style="float: left; margin: 5px;"><a href="logout.php" style="text-decoration: none;">Logout</a></li> 
             ';
+            echo '
+            <li style="float: left; margin: 5px;"><a href="user.index.php" style="text-decoration: none;">Gebruikers</a></li> 
+            ';
         } else {
             echo '
 
@@ -72,7 +75,10 @@ include 'header.inc.php';
                                 <a href=\"index.php?ingelogd&cursus=" . $cursus['id'] . "\">Inschrijven</a>
                             </td>
                             <td>
-                            <a href=\"edit.php?cursus=" . $cursus['id'] . "\">aanpassen</a>
+                            <a href=\"edit.php?cursus=" . $cursus['id'] . "\">Aanpassen</a>
+                            </td>
+                            <td>
+                            <a href=\"delete.php?cursus=" . $cursus['id'] . "\">Verwijderen</a>
                             </td>";
                         }
                         echo '</tr>';
