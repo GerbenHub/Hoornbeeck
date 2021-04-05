@@ -10,6 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link href="style.css?<?= time() ?>" rel="stylesheet" />
+
+  <script>
+    function myFunction() {
+
+    }
+  </script>
 </head>
 
 <body>
@@ -18,22 +24,27 @@
   <h2 class="purple right">101 &nbsp</h2>
   <img class="bg" src="heide.png" alt="Paarse Heide" width="100%" />
   <img class="hersen" src="hersen.png" alt="hersen" />
-  <div class="inverted"></div>
+  <div class="invert">
+    <div class="inverted"></div>
+  </div>
+
   <!-- <div class="m-auto d-flex">
     <h1 class="minutes">0</h1><h2 class="fs-10 left">/20</h2><h3 class="left min">min</h3>
   </div> -->
+  <div class="minuten">
+    <span class="minutes-1"> 0</span>
+    <span class="minutes-2"> /20 </span>
+    <span class="minutes-3"> min </span>
+  </div>
 
-  <div class="d-flex flex-column ">
+  <div class="d-flex">
 
-    <div class="d-flex">
 
-        <h1 class="minutes">0</h1>
-        <h2 class="fs-20 left">/20</h2>
-        <h3 class="left min">min</h3>
- 
-    </div>
 
-      <button class="m-auto white roundedcorners">Start Ommetje</button>
+  </div>
+  </div>
+  <button class="m-auto white roundedcorners" id="start-button">Start Ommetje</button>
+  
   </div>
 
   <div class="card h-100">
@@ -87,5 +98,12 @@
   </div>
 </body>
 
-</html>
+<script>
+        const startBtn = document.querySelector('#start-button')
 
+        startBtn.addEventListener('click', () => {
+            window.location.href = 'lopen.html'
+        })
+      </script>
+
+</html>
