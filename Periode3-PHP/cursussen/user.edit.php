@@ -19,12 +19,19 @@ if ($_POST) {
 
     $sql = "UPDATE users SET username='$username', password='$password', naam_voluit='$naam_voluit' WHERE id='$user' ";
     if (mysqli_query($conn, $sql)) {
-        header('location: user.index.php'); 
+        header('location: user.index.php');
     } else {
         die('niet gelukt' . mysqli_error($conn));
     }
 }
 
+if ($_GET) {
+    $id = $_GET['id'];
+    $conn = mysqli_connect('localhost', 'root', '', 'trainingen');
+    $sql = "SELECT * from users WHERE id='$id'";
+    $result = mysqli_query($conn, $sql);
+    $user = mysqli_fetch_assoc($result);
+}
 
 ?>
 
@@ -41,12 +48,12 @@ if ($_POST) {
 
 
     <form method="post" action="">
-        <input type="hidden" name="id" value="<?= $_GET['user'] ?>">
+        <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
         <div class="form-group">
             <label for="exampleInputEmail1">Eigen naam</label>
-            <input name="naam_voluit" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="eigen naam">
+            <input name="naam_voluit" value="<?= $user['naam_voluit'] ?>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="eigen naam">
             <label for="exampleInputEmail1">Gebruikersnaam</label>
-            <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="gebruikersnaam">
+            <input name="username" value="<?= $user['username']?>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="gebruikersnaam">
             <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
         </div>
         <div class="form-group">

@@ -75,7 +75,7 @@ include 'header.inc.php';
                                 <a href=\"index.php?ingelogd&cursus=" . $cursus['id'] . "\">Inschrijven</a>
                             </td>
                             <td>
-                            <a href=\"edit.php?cursus=" . $cursus['id'] . "\">Aanpassen</a>
+                            <a href=\"edit.php?id=" . $cursus['id'] . "\">Aanpassen</a>
                             </td>
                             <td>
                             <a href=\"delete.php?cursus=" . $cursus['id'] . "\">Verwijderen</a>

@@ -41,7 +41,7 @@ $result = mysqli_query($conn, $sql);
                     if (isset($_SESSION['loggedIn'])) {
                         echo "
                         <td>
-                        <a href=\"user.edit.php?user=" . $user['id'] . "\">Aanpassen</a>
+                        <a href=\"user.edit.php?id=" . $user['id'] . "\">Aanpassen</a>
                         </td>
                         <td>
                         <a href=\"user.delete.php?user=" . $user['id'] . "\">Verwijderen</a>

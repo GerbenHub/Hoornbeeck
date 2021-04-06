@@ -23,6 +23,14 @@ $cursus = $_POST['id'];
 
 }
 
+if ($_GET) {
+  $id = $_GET['id'];
+  $conn = mysqli_connect('localhost', 'root', '', 'trainingen');
+  $sql = "SELECT * from cursussen WHERE id='$id'";
+  $result = mysqli_query($conn, $sql);
+  $cursus = mysqli_fetch_assoc($result);
+}
+
 
 ?>
 
@@ -36,18 +44,18 @@ $cursus = $_POST['id'];
 </head>
 <body>
     <form method="POST" action="">
-    <input type="hidden" name="id" value="<?= $_GET['cursus'] ?>">
+    <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Name</label>
-          <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="text" value="<?= $cursus['name'] ?>" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
           <label for="Class" class="form-label">Costs</label>
-          <input type="text" name="costs" class="form-control" id="Class">
+          <input type="text" value="<?= $cursus['costs'] ?>" name="costs" class="form-control" id="Class">
         </div>
         <div class="mb-3">
             <label for="Class" class="form-label">Duration</label>
-            <input type="text" name="duration" class="form-control" id="Class">
+            <input type="text" value="<?= $cursus['duration'] ?>" name="duration" class="form-control" id="Class">
           </div>
         <button type="submit" class="btn btn-primary">Aanpassen</button>
       </form>
